@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: sistema-conta-facil-pi1
+    runtime: python
+    buildCommand: ""
+    startCommand: gunicorn run:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: DATABASE_URL
+        value: sqlite:///meubanco.db

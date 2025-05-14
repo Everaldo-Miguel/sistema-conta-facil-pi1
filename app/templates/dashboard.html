@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h1 class="text-center mb-1 fw-bold ">SISTEMA CONTA FÁCIL </h1>
+<h4 class="text-center mb-5 ">"O JEITO MAIS SIMPLES DE GERENCIAR SUAS CONTAS"</h4>
+<h4 class="text-center mb-4">Qual conta você deseja gerenciar hoje?</h4>
+<div class="container my-5 text-center">
+    <div class="row justify-content-center">
+        <div class="col-6 col-md-3 mb-3">
+            <a href="{{ url_for('main.contas', tipo='pagar') }}">
+                <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" width="100" alt="Contas a Pagar">
+            <h4>Contas a Pagar</h4>
+            </a>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+            <a href="{{ url_for('main.contas', tipo='receber') }}">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png" width="100" alt="Contas a Pagar">
+            <h4>Contas a Receber</h4>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="text-center mt-5">
+    <a href="{{ url_for('main.logout') }}" class="btn btn-outline-danger">Sair</a>
+</div>
+{% endblock %}

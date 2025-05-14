@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+{% block title %}Contas{% endblock %}
+{% block content %}
+<h2 class="mb-4 text-center fw-bold">Contas a {{ tipo }}</h2>
+
+<a href="{{ url_for('main.nova_conta', tipo=tipo) }}" class="btn btn-success mb-3">+ Nova Conta</a>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover text-center align-middle">
+    <thead>
+        <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Vencimento</th>
+            <th>status</th>
+            <th>    </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for conta in contas %}
+        <tr id="conta-{{ conta.id }}"
+            class="{% if conta.status == 'Paga' %}table-success{% elif conta.vencimento < today and conta.status != 'Paga' %}table-danger{% endif %}">
+            <td>{{ conta.descricao }}</td>
+            <td>R$ {{ '%.2f' | format(conta.valor) }}</td>
+            <td>{{ conta.vencimento.strftime('%d/%m/%Y') }}</td>
+            <td>{{conta.status}} </td>
+            <td>
+                <a href="{{ url_for('main.editar_conta', tipo=tipo, conta_id=conta.id) }}" class="btn btn-sm btn-outline-primary">Editar</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+</div>
+
+
+<a href="{{ url_for('main.dashboard') }}" class="btn btn-secondary mt-3">Voltar</a>
+{% endblock %}
+
+
