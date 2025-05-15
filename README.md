@@ -27,6 +27,7 @@ O **Sistema Conta Fácil** é uma aplicação web para o gerenciamento simples e
 ## 🚀 **Instalação e Configuração**
 
 1. Baixe o projeto
+   
 Acesse o repositório no GitHub:
 https://github.com/Everaldo-Miguel/sistema-conta-facil
 
