@@ -26,10 +26,16 @@ O **Sistema Conta Fácil** é uma aplicação web para o gerenciamento simples e
 
 ## 🚀 **Instalação e Configuração**
 
-1. Clone o repositório:
+1. Baixe o projeto
+Acesse o repositório no GitHub:
+https://github.com/Everaldo-Miguel/sistema-conta-facil
 
+Clique no botão verde "Code" e selecione "Download ZIP".
+
+Extraia o arquivo .zip em uma pasta de sua preferência.
+
+No terminal, navegue até a pasta extraída:
 ```No terminal, digite
-git clone https://github.com/Everaldo-Miguel/sistema-conta-facil.git
 cd sistema-conta-facil-pi1
 ```
 
